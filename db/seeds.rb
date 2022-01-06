@@ -8,7 +8,7 @@
 
 User.delete_all
 
-User.create(
+User.create!(
   username: 'bob123',
   password: 'password',
   first_name: 'bob',
