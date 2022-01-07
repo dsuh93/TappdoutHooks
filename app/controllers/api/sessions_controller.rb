@@ -1,19 +1,21 @@
 class Api::SessionsController < ApplicationController
 
+  before_action :ensure_logged_in, only: [:destroy]
+
   def new
     render :new
   end
 
   def create
     @user = User.find_by_credentials(
-      params[:username],
-      params[:password]
+      params[:user][:username],
+      params[:user][:password]
     )
     if @user
-      login(@user)
+      login!(@user)
       render 'api/users/show'
     else
-      render json: @user.errors.full_messages, status: 404
+      render json: ["Invalid username or password"], status: 404
     end
   end
 
