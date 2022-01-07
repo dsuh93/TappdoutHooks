@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params(users_columns))
+    @user = User.new(user_params(users_columns)) # users_columns is from ApplicationController
     if @user.save
       login(@user)
       render :show
@@ -37,6 +37,6 @@ class Api::UsersController < ApplicationController
   end
 
   def user_params(user_columns)
-    params.require(:user).permit(:password, ...users_columns)
+    params.require(:user).permit(:password, *users_columns)
   end
 end

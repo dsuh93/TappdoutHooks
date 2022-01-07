@@ -29,6 +29,8 @@ class User < ApplicationRecord
   validates :session_token, :email, :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  validate :check_email
+
   attr_reader :password 
   after_initialize :ensure_session_token
 
@@ -61,5 +63,12 @@ class User < ApplicationRecord
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64
+  end
+
+  def check_email
+    handle, website = self.email.split("@")
+    handle_exists = handle.length > 0
+    website_legit = website.split(".").length == 2
+    errors[:email] << "please enter a valid email address" unless handle_exists && website_legit 
   end
 end
