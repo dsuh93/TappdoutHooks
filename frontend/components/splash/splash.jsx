@@ -25,13 +25,13 @@ class Splash extends React.Component {
     let { phoneNumber } = this.state;
     return (
       <div className='splash'>
-        <div className='splash-section 1'>
+        <div className='splash-section one'>
           <nav className='splash-auth'>
             <button className='splash-signin'>SIGN IN</button>
             <button className='splash-signup'>CREATE AN ACCOUNT</button>
           </nav>
-          <div className='splash-1-1'>
-            <div>
+          <div className='splash-1'>
+            <div className='splash-1-left'>
               <img src="" alt="logo" />
               <h1>Discover and share your favorite beer.</h1>
               <form onSubmit={(e) => this.handleSubmit(e)} action="">
@@ -39,23 +39,37 @@ class Splash extends React.Component {
                 <button>SEND LINK</button>
               </form>
             </div>
-            <div></div>
+            <div className='splash-1-right'>
+              <img src={window.triplePhones} alt="triple phones" />
+            </div>
           </div>
         </div>
-        <div className='splash-section 2'>
-          <p>splash-2</p>
+        <div className='splash-section two'>
+          <div>search bar</div>
+          <div className='image-blurbs'>
+            <div className='image-blurb-left'>
+              <img src="" alt="left-image" />
+              <h4>CHECK IN AND RATE BEER</h4>
+              <p>Keep track of what you've tried and what you thought of it by checking in a beer and rating it.</p>
+            </div>
+            <div className='image-blurb-right'>
+              <img src="" alt="right-image" />
+              <h4>DRINK NEW BEERS, UNLOCK BADGES</h4>
+              <p>Expand your palate by trying new & different beer styles and unlock achievements along the way.</p>
+            </div>
+          </div>
         </div>
-        <div className='splash-section 3'>
-          <p>splash-3</p>
+        <div className='splash-section three'>
+          <p>splash-three</p>
         </div>
-        <div className='splash-section 4'>
-          <p>splash-4</p>
+        <div className='splash-section four'>
+          <p>splash-four</p>
         </div>
-        <div className='splash-section 5'>
-          <p>splash-5</p>
+        <div className='splash-section five'>
+          <p>splash-five</p>
         </div>
-        <div className='splash-section 6'>
-          <p>splash-6</p>
+        <div className='splash-section six'>
+          <p>splash-six</p>
         </div>
       </div>
     )
