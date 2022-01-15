@@ -1,0 +1,30 @@
+@import './mixins.scss';
+
+.splash {
+  @include flex(column);
+  width: 100%;
+  height: 100%;
+
+  .splash-section {
+    @include flex(column);
+    width: 100%;
+
+    // &.1 {
+    //   background-image: none;
+    // } will need to add a background image here
+
+    .splash-auth {
+      @include flex(row);
+      width: 100%;
+      background-color: black;
+      justify-content: flex-end;
+
+      .splash-signin, .splash-signup {
+        border: 1px solid white;
+        padding: 5px;
+        color: white;
+        background-color: transparent;
+      }
+    }
+  }
+}
