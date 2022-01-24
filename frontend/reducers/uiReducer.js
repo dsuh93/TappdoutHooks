@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 
 
 const uiReducer = (state = {}, action) => {
-  return {};
+  return state;
 };
 
 export default uiReducer;

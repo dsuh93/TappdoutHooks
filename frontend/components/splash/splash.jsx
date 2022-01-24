@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 const Splash = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -26,8 +27,16 @@ const Splash = () => {
     <div className='splash'>
       <div className='splash-section one'>
         <nav className='splash-auth'>
-          <button className='splash-signin'>SIGN IN</button>
-          <button className='splash-signup'>CREATE AN ACCOUNT</button>
+          <Link to="/login" className='signin-link'>
+            <button className='splash-signin'>SIGN IN
+
+            </button>
+          </Link>
+          <Link to="/signup" className='signup-link'>
+            <button className='splash-signup'>CREATE AN ACCOUNT
+
+            </button>
+          </Link>
         </nav>
         <div className='splash-1'>
           <div className='splash-1-left'>

@@ -1,8 +1,8 @@
-import { combineReducers } from "redux";
+// import { combineReducers } from "redux";
 
 
 const entitiesReducer = (state = {}, action) => {
-  return {};
+  return state;
 };
 
 export default entitiesReducer;

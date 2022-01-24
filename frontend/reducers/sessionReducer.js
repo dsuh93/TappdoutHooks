@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 
 
 const sessionReducer = (state = {}, action) => {
-  return {};
+  return state;
 };
 
 export default sessionReducer;
