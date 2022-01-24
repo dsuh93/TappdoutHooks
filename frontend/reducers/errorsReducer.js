@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 
 
 const errorsReducer = (state = {}, action) => {
-  return {};
+  return state;
 };
 
 export default errorsReducer;

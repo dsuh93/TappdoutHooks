@@ -11,6 +11,14 @@
     <script type="text/javascript">
       window.triplePhones = '<%= image_url('masthead-img-main.png') %>'
     </script>
+    <% if logged_in? %>
+      <script type="text/javascript">
+        window.currentUser = <%= render(
+          "api/users/user.json.jbuilder",
+          user: current_user
+        ).html_safe %>
+      </script>
+    <% end %>
     <%= javascript_include_tag 'application' %>
   </head>
 
